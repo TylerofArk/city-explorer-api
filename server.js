@@ -24,13 +24,12 @@ app.use(cors());
 // Base Route - proof of life
 app.get('/', (request, response) => {
 	response.status(200).send('Welcome to our server.')
-})
+});
 
 // Weather Route
 app.get('/weather', getWeather);
 
-async function getWeather(request, response) {
-		const searchQuery = request.query.searchQuery;
+async function getWeather(request, response, next) {
 		const lat = request.query.lat;
 		const lon = request.query.lon;
 		const weatherUrl = `http://api.weatherbit.io/v2.0/forecast/daily?units=I&lat=${lat}&lon=${lon}&key=${process.env.WEATHER_API_KEY}`;
@@ -38,8 +37,8 @@ async function getWeather(request, response) {
 			const weatherResponse = await axios.get(weatherUrl);
 			console.log(weatherResponse);
 			const dataToGroom = weatherResponse.data;
-			const dataToSend = dataToGroom.data.map(object => {
-				return new Forecast(object);
+			const dataToSend = dataToGroom.data.map(weatherObj => {
+				return new Forecast(weatherObj);
 				
 			});
 			response.status(200).send(dataToSend);
@@ -62,17 +61,18 @@ class Forecast {
 app.get('/movies', getMovie);
 
 async function getMovie (request, response) {
-	const city = request.query.searchQuery;
-	console.log(searchQuery);
-	const movieUrl = `https://api.themoviedb.org/3/movie/550?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
+	const city = request.query.city;
+	console.log(city);
+	console.log(process.env.MOVIE_API_KEY)
+	const movieUrl = `http://api.themoviedb.org/3/search/movie/?api_key=${process.env.MOVIE_API_KEY}&query=${city}`;
 
 try {
-	const showMovie = await axios.get(url);
-
+	const showMovie = await axios.get(movieUrl);
+console.log(showMovie)
 	const dataToSend = showMovie.data.results.map(movieObj => new Showtimes(movieObj));
 	response.status(200).send(dataToSend);
 } catch (error){
-	response.status(500).send('error: Sorry, something went wrong.');
+	response.status(500).send(error.message);
 }
 };
 
@@ -90,7 +90,7 @@ app.get('*', (request, response) => {
 })
 
 app.use((error, request, response, next) => {
-	response.status(500).send('"error": "Something went wrong"');
+	response.status(500).send(error);
 });
 
 app.listen(PORT, () => console.log(`We are up on PORT: ${PORT}`));
