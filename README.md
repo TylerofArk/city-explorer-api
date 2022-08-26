@@ -2,8 +2,8 @@
 
 # Project Name
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Tyler Main
+**Version**: 2.0.0
 
 ## Overview
 
@@ -13,9 +13,8 @@ This is a React application that uses the Axios library to make user-initiated r
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
-![WRRC Model](vscode-remote://wsl%2Bubuntu/home/tylerofark/projects/courses/301/city-explorer/images/WRRC.png)
+![WRRC](/imgs.WRRC.jpg)
 
 
 ## Change Log
@@ -44,17 +43,23 @@ Luis Rosales
 
 -------------------------------------------------
 
+Dan Awesome
+Stephen Clemmer
+Luis Rosales
+Robert Ball
+Brian Sward
+
 ### Thursday, Aug. 25, 2022
 
-### Name of feature: Geocoding API
+### Name of feature: Modulization
 
-### Estimate of time needed to complete: 3 hrs
+### Estimate of time needed to complete: 1 hrs
 
-### Start time: 5:22pm
+### Start time: 3:22pm
 
-### Finish time
+### Finish time: 4:45
 
-### Actual time needed to complete
+### Actual time needed to complete: 2hr 20min
 
 -------------------------------------------------
 
