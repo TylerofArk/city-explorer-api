@@ -13,10 +13,7 @@ This is a React application that uses the Axios library to make user-initiated r
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-
-![WRRC](/imgs.WRRC.jpg)
-
-![WRRC](vscode-remote://wsl%2Bubuntu/home/tylerofark/projects/courses/301/city-explorer-api/imgs/WRRC.jpg)
+![WRRC Response Cycle](https://user-images.githubusercontent.com/108289379/186791507-982cfb7d-5744-4a39-b060-4c21d62b7021.JPG)
 
 ## Change Log
 
