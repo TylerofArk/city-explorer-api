@@ -69,14 +69,16 @@ Brian Sward
 
 -------------------------------------------------
 
+Luis Rosales
+
 ### Friday, Aug. 26, 2022
 
-### Name of feature: Geocoding API
+### Name of feature: Cache
 
-### Estimate of time needed to complete: 3 hrs
+### Estimate of time needed to complete: 2 hrs
 
-### Start time: 5:22pm
+### Start time: 11:26am
 
-### Finish time
+### Finish time: 1:40pm
 
-### Actual time needed to complete
+### Actual time needed to complete: 2hr 15 min
